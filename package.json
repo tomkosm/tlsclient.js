@@ -9,7 +9,7 @@
     "prepare": "npm run build",
     "postinstall": "node ./scripts/postinstall.js"
   },
-  "name": "@dryft/tlsclient",
+  "name": "@tomkosm/tlsclient",
   "version": "1.0.8",
   "peerDependencies": {
     "typescript": "^5.0.0"
