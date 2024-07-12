@@ -82,7 +82,7 @@ export function createAdapter(_config: any) {
     TLS_LIB_PATH = _config.tlsLibPath;
   }
   const pool = workerpool.pool(
-    require.resolve("@dryft/tlsclient/lib/helpers/tls.js"),
+    require.resolve("@tomkosm/tlsclient/lib/helpers/tls.js"),
     {
       workerThreadOpts: {
         env: {
