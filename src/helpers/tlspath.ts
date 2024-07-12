@@ -24,10 +24,12 @@ if (platform === "win32") {
   lines.forEach((line, _) => {
     // Split the line into an array of words delimited by '='
     const words = line.split("=");
-    release[words[0].trim().toLowerCase()] = words[1].trim();
+    if(words.length >=2)
+    	release[words[0].trim().toLowerCase()] = words[1].trim();
   });
 
-  if (release.id.toLowerCase().includes("ubuntu")) {
+  const glibcDistros = ["ubuntu", "debian","arch","fedora"]; //I guess that the difference is glibc
+  if (glibcDistros.some(distro => release.id.toLowerCase().includes(distro))) {
     distribution = "ubuntu-amd64";
   } else if (release.id.toLowerCase().includes("alpine")) {
     distribution = `alpine-amd64`;
@@ -39,7 +41,7 @@ if (platform === "win32") {
   process.exit(1);
 }
 let _filename = `${filename}-${distribution}-v${version}.${extension}`;
-const url = `https://github.com/bogdanfinn/tls-client/releases/download/v1.7.2/${_filename}`;
+const url = `https://github.com/bogdanfinn/tls-client/releases/download/v1.7.5/${_filename}`;
 const destination = `${os.tmpdir()}/${_filename}`;
 
 export function getTLSDependencyPath() {

@@ -28,7 +28,8 @@ if (platform === "win32") {
     	release[words[0].trim().toLowerCase()] = words[1].trim();
   });
 
-  if (release.id.toLowerCase().includes("ubuntu")) {
+  const glibcDistros = ["ubuntu", "debian","arch","fedora"]; //I guess that the difference is glibc
+  if (glibcDistros.some(distro => release.id.toLowerCase().includes(distro))) {
     distribution = "ubuntu-amd64";
   } else if (release.id.toLowerCase().includes("alpine")) {
     distribution = `alpine-amd64`;
