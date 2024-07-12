@@ -20,7 +20,9 @@
   "directories": {
     "lib": "lib"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.14.10"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/heydryft/tlsclient.js.git"
