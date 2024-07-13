@@ -41,7 +41,8 @@ if (platform === "win32") {
   process.exit(1);
 }
 let _filename = `${filename}-${distribution}-v${version}.${extension}`;
-const url = `https://github.com/bogdanfinn/tls-client/releases/download/${_filename}`;
+//https://github.com/bogdanfinn/tls-client/releases/download/v1.7.5/tls-client-linux-ubuntu-amd64-1.7.5.so
+const url = `https://github.com/bogdanfinn/tls-client/releases/download/v1.7.5/${_filename}`;
 const destination = `${__dirname}/../../${_filename}`;
 
 export function getTLSDependencyPath() {
