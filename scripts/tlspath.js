@@ -3,7 +3,7 @@ const os = require("os");
 const arch = os.arch();
 const platform = os.platform();
 
-let version = "1.7.2";
+let version = "1.7.5";
 let filename, extension, distribution;
 
 if (platform === "win32") {
@@ -41,8 +41,8 @@ if (platform === "win32") {
   process.exit(1);
 }
 let _filename = `${filename}-${distribution}-v${version}.${extension}`;
-const url = `https://github.com/bogdanfinn/tls-client/releases/download/v1.7.2/${_filename}`;
-const destination = `${os.tmpdir()}/${_filename}`;
+const url = `https://github.com/bogdanfinn/tls-client/releases/download/v1.7.5/${_filename}`;
+const destination = `${__dirname}/../${_filename}`;
 
 function getTLSDependencyPath() {
   return {
