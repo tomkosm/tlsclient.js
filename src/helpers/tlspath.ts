@@ -40,7 +40,8 @@ if (platform === "win32") {
   console.error(`Unsupported platform: ${platform}`);
   process.exit(1);
 }
-let _filename = `${filename}-${distribution}-v${version}.${extension}`;
+let _filename = `${filename}-${distribution}-${version}.${extension}`;
+
 //https://github.com/bogdanfinn/tls-client/releases/download/v1.7.5/tls-client-linux-ubuntu-amd64-1.7.5.so
 const url = `https://github.com/bogdanfinn/tls-client/releases/download/v1.7.5/${_filename}`;
 const destination = `${__dirname}/../../${_filename}`;
